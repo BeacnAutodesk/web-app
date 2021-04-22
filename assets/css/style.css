@@ -34,6 +34,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      justify-content: flex-start;
   }
 
   h1 {
@@ -74,4 +75,30 @@
     text-align: left;
     line-height: 1.6;
     list-style-type: none;
+  }
+
+  .rect-3 {
+    display: flex;
+    width: 700px;
+    border-style:solid;
+    border-width: 5px;
+    border-radius: 25px;
+    border-color: #E7AE7E;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 50px;
+    text-align: center;
+    float: left;
+    padding: 20px;
+  }
+
+  .body-2 {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+
+  img {
+    display: block;
   }
