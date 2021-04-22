@@ -1,0 +1,21 @@
+.navigation a {
+    float: left;
+    display: block;
+    color: #2C2C2C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-size: 17px;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  .navigation a.active {
+    color: #18A0FB;
+    border-bottom: 3px solid #18A0FB;
+  }
+
+  .navigation {
+      margin: 25px;
+      width: 874px;
+  }
