@@ -77,6 +77,32 @@ class Fusion_LCA:
         else: 
             return self.disposal_impact*self.mass_comp
 
+def main_analysis(product_name, mat_type, mat_density, process_type, mass_comp, box_size):
+    #Data from Fusion 360
+    product_name = product_name
+    mat_type = [mat_type]
+    mat_density = mat_density #material density in kg/m^3
+    process_type = process_type # 1 is additive, -1 is subtractive manufacturing
+    mass_comp = mass_comp #mass of component (kg)
+    box_size = box_size # size of a box the component would fit in (m^3)
+    
+    #Data from EcoInvent, GABI, OpenLCA
+    mat_footprint = 3 #material footprint (kg CO2eq/kg)
+    mat_cost = 1.53 #cost of material ($/kg)
+    energy_footprint = 1e-7 #footprint of energy used in manufacturing (kgCO2/J)
+    energy_cost = 2.8e-8 #cost of energy in manufacturing ($/joule)
+    specific_energy = 1000 #energy used per unit of mass processed (J/kg)
+    is_recycled = -1 #1 is recycled, -1 is not-recycled
+    disposal_impact = 10**-2 # disposal impact of material (kgCO2eq/kg of mat_type) 
+    
+    my_LCA = Fusion_LCA(product_name, mat_type, mat_density, process_type,
+                 box_size, mass_comp, mat_footprint, mat_cost, energy_footprint,energy_cost,
+                 specific_energy, is_recycled, disposal_impact)
+    
+    co2, cost = my_LCA.manufacturing()
+    co2 += my_LCA.disposal()
+    return [product_name, cost, co2]
+
 def main():
     #Data from Fusion 360
     product_name = "Carbon Black Steel Bolt"

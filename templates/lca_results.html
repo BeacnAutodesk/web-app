@@ -1,0 +1,21 @@
+{% extends "layouts.html" %}
+{% block content %}
+    <div class= "content-section">
+        <form method="POST" action=""> 
+            <!-- INPUT FIELDS -->
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Conduct LCA</legend>
+                <div class="form-group">
+                    <p>Product Name: {{lca_list[0]}}</p> <!-- label of username field -->                
+                </div>
+                <div class="form-group">
+                    <p>Cost in $: {{lca_list[1]}}</p>
+                </div>
+                <div class="form-group">
+                    <p>CO2 in kilograms: {{lca_list[2]}}</p>
+                </div>
+            </fieldset>
+            <!-- SUBMIT BUTTON -->
+        </form>
+    </div> 
+{% endblock content %}
