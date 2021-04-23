@@ -8,25 +8,24 @@
                 <legend class="border-bottom mb-4"> Join Today</legend>
                 <div class="form-group">
                     {{form.username.label(class = "form-control-label")}} <!-- label of username field -->
-                    {{form.username.label(class = "form-control form-control-lg")}} <!-- label of username field -->
+                    {{form.username(class = "form-control form-control-lg")}} <!-- label of username field -->
                 </div>
                 <div class="form-group">
                     {{form.email.label(class = "form-control-label")}} <!-- label of username field -->
-                    {{form.email.label(class = "form-control form-control-lg")}} <!-- label of username field -->
+                    {{form.email(class = "form-control form-control-lg")}} <!-- label of username field -->
                 </div>
                 <div class="form-group">
                     {{form.password.label(class = "form-control-label")}} <!-- label of username field -->
-                    {{form.password.label(class = "form-control form-control-lg")}} <!-- label of username field -->
+                    {{form.password(class = "form-control form-control-lg")}} <!-- label of username field -->
                 </div>
                 <div class="form-group">
                     {{form.confirm_password.label(class = "form-control-label")}} <!-- label of username field -->
-                    {{form.confirm_password.label(class = "form-control form-control-lg")}} <!-- label of username field -->
+                    {{form.confirm_password(class = "form-control form-control-lg")}} <!-- label of username field -->
                 </div>
             </fieldset>
             <!-- SUBMIT BUTTON -->
             <div class="form-group">
                 {{form.submit(class="btn btn-outline-info")}} <!-- submit button (blue outline button)-->
-                {{form.confirm_password.label(class = "form-control form-control-lg")}} <!-- label of username field -->
             </div>
         </form>
     </div> 
