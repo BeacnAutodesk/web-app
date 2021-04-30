@@ -43,9 +43,8 @@ def register():
 def analysis():
     form = AnalysisForm()
     if form.validate_on_submit():
-        print('Hello world!', file=sys.stderr)
-        print("data", form.product_name.data)
-        print(type(form.product_name.data))
+        
+        print("FORM VALIDATED")
 
         product_name = form.product_name.data
         material_type = form.material_type.data

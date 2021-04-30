@@ -29,12 +29,12 @@ class AnalysisForm(FlaskForm):
             validators = [DataRequired("Fail 1")])
     material_type = StringField('Material Type', 
             validators = [DataRequired("Fail 2")])
-    material_density = FloatField('Material Density', 
+    material_density = FloatField('Material Density (kg/m\N{SUPERSCRIPT THREE})', 
             validators = [DataRequired("Fail 3")])
     process_type = FloatField('Process Type', 
             validators = [DataRequired("Fail 4")])
-    mass = FloatField('Mass of Component', 
+    mass = FloatField('Mass of Component (kg)', 
             validators = [DataRequired("Fail 5")])
-    box_size = FloatField('Size of Component', 
+    box_size = FloatField('Size of Component (m\N{SUPERSCRIPT THREE})', 
             validators = [DataRequired("Fail 6")])
     submit = SubmitField('Complete LCA')
