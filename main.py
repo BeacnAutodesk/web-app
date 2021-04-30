@@ -62,21 +62,6 @@ def analysis():
         print(form.errors, file=sys.stderr)
     return render_template('lca.html', title = 'Analysis', form = form)
 
-# @app.route('/results')
-# def results():
-
-#     # product_name = "Carbon Black Steel Bolt"
-#     # material_type = "Grade 5 Carbon Steel"
-#     # material_density = 8000
-#     # process_type = -1
-#     # box_size = 0.00000036
-#     # mass = 0.001
-    
-
-#     r = analysis_script.main_analysis(product_name, material_type, material_density, 
-#                                         process_type, box_size, mass)
-#     return render_template('lca_results.html', title = 'Analysis', lca_list=r)
-
 @app.route('/login')
 def login():
     form = LoginForm()
