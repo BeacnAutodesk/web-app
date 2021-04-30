@@ -43,18 +43,19 @@ def register():
 def analysis():
     form = AnalysisForm()
     if form.validate_on_submit():
-        
+
         print("FORM VALIDATED")
 
         product_name = form.product_name.data
         material_type = form.material_type.data
         material_density = form.material_density.data
-        process_type = form.process_type.data
+        process_type = form.p_type.data
+        print(process_type)
         mass = form.mass.data
         box_size = form.box_size.data
 
         r = analysis_script.main_analysis(product_name, material_type, material_density, 
-                                        process_type, box_size, mass)
+                                        process_type, mass, box_size)
         return render_template('lca_results.html', title = 'Analysis', lca_list=r)
 
     else:

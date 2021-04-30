@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, FloatField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, FloatField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 class RegistrationForm(FlaskForm):
@@ -25,14 +25,15 @@ class LoginForm(FlaskForm):
     #use validators
 
 class AnalysisForm(FlaskForm):
-    product_name = StringField('Product Name', 
-            validators = [DataRequired("Fail 1")])
-    material_type = StringField('Material Type', 
-            validators = [DataRequired("Fail 2")])
+    # product_name = StringField('Product Name', 
+    #         validators = [DataRequired("Fail 1")])
+    product_name = SelectField('Product Name', choices=[("Carbon Black Steel Bolt", "Carbon Black Steel Bolt")])
+    # material_type = StringField('Material Type', 
+    #         validators = [DataRequired("Fail 2")])
+    material_type = SelectField('Material Type', choices=[("Grade 5 Carbon Steel", "Carbon Steel")])
     material_density = FloatField('Material Density (kg/m\N{SUPERSCRIPT THREE})', 
             validators = [DataRequired("Fail 3")])
-    process_type = FloatField('Process Type', 
-            validators = [DataRequired("Fail 4")])
+    p_type = SelectField('Process Type', choices=[(-1, 'Subtractive'), (1, 'Additive')], coerce=float)
     mass = FloatField('Mass of Component (kg)', 
             validators = [DataRequired("Fail 5")])
     box_size = FloatField('Size of Component (m\N{SUPERSCRIPT THREE})', 
