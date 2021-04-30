@@ -44,31 +44,38 @@ def analysis():
     form = AnalysisForm()
     if form.validate_on_submit():
         print('Hello world!', file=sys.stderr)
-        return redirect('/results')
+        print("data", form.product_name.data)
+        print(type(form.product_name.data))
+
+        product_name = form.product_name.data
+        material_type = form.material_type.data
+        material_density = form.material_density.data
+        process_type = form.process_type.data
+        mass = form.mass.data
+        box_size = form.box_size.data
+
+        r = analysis_script.main_analysis(product_name, material_type, material_density, 
+                                        process_type, box_size, mass)
+        return render_template('lca_results.html', title = 'Analysis', lca_list=r)
+
     else:
         print(form.errors, file=sys.stderr)
     return render_template('lca.html', title = 'Analysis', form = form)
 
-@app.route('/results')
-def results():
-    #product_name = request.form['product_name']
-    # material_type = request.form.material_type.data
-    # material_density = request.form.material_density.data
-    # process_type = request.form.process_type.data
-    # mass = request.form.mass.data
-    # box_size = request.form.box_size.data
+# @app.route('/results')
+# def results():
 
-    product_name = "Carbon Black Steel Bolt"
-    material_type = "Grade 5 Carbon Steel"
-    material_density = 8000
-    process_type = -1
-    box_size = 0.00000036
-    mass = 0.001
+#     # product_name = "Carbon Black Steel Bolt"
+#     # material_type = "Grade 5 Carbon Steel"
+#     # material_density = 8000
+#     # process_type = -1
+#     # box_size = 0.00000036
+#     # mass = 0.001
     
 
-    r = analysis_script.main_analysis(product_name, material_type, material_density, 
-                                        process_type, box_size, mass)
-    return render_template('lca_results.html', title = 'Analysis', lca_list=r)
+#     r = analysis_script.main_analysis(product_name, material_type, material_density, 
+#                                         process_type, box_size, mass)
+#     return render_template('lca_results.html', title = 'Analysis', lca_list=r)
 
 @app.route('/login')
 def login():
