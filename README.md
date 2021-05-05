@@ -1,7 +1,7 @@
 # web-app
 
 ## Description
-This is a simple Flask Web App intended to mockup how an LCA application could look for the client. In its current state, there are key examples intended to display what fields are necessary for a gate-to-gate LCA (namely the materials, mass, density, etc.). 
+This is a simple Flask Web App intended to mockup how an LCA application could look for the client. In its current state, there is an example of a steel bolt intended to display what fields are necessary for a gate-to-gate LCA (namely the materials, mass, density, etc.). 
 
 [Exiobase Data Referenced](https://www.exiobase.eu/index.php/data-download/exiobase3hyb)
 
