@@ -5,7 +5,7 @@ This is a simple Flask Web App intended to mockup how an LCA application could l
 
 ## Requirements/Libraries
 - `flask`
-- `forms'
+- `forms`
 - `flask_wtf`
 - `wtforms`
 
